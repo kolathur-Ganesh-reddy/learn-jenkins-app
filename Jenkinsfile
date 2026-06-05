@@ -55,7 +55,12 @@ pipeline {
                         sleep 10
                         npx playwright test --reporter=line
                         '''
-                    }      
+                    }  
+                    post {
+                        always {
+                            junit 'jest-results/junit.xml'
+                        }
+                    }    
                 }
             }
         }
