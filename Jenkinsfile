@@ -40,17 +40,19 @@ pipeline {
                     image 'mcr.microsoft.com/playwright:v1.60.0-noble'
                     reuseNode true
                 }
+            }
             steps {
                 sh '''
                 npm install -g serve
                 serve -s build
                 '''
             }
+           
         }
-    }
-    post {
-        always {
-            junit 'test-results/junit.xml'
+        post {
+            always {
+                junit 'test-results/junit.xml'
+            }
         }
     }
 }
