@@ -60,8 +60,9 @@ pipeline {
                 }
             }
         }
+
         stage('Approval') {
-            stepss {
+            steps {
                 input cancel: 'cancel the deploy', message: 'i wish you ', ok: 'ok ready to deploy'
             }
         }
