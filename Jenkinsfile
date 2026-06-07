@@ -11,8 +11,6 @@ pipeline {
             }
             steps {
                 sh '''
-                node --version
-                npm --version
                 npm ci
                 npm run build
                 '''
@@ -68,7 +66,7 @@ pipeline {
             }
             steps {
                 sh '''
-                npm install -g netlify-cli
+                npm install netlify-cli
                 node_modules/.bin/netlify --version
                 '''
             }
